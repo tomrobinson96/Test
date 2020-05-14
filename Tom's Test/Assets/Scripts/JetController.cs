@@ -69,13 +69,11 @@ public class JetController : MonoBehaviour
 
         if(transform.position.y >= 360)
         {
-            rb.isKinematic = false;
-            //rb.AddForce(1, -gravity, gravity);
+            rb.isKinematic = false;            
         }
         if (transform.position.y <= 0)
         {
             rb.isKinematic = false;
-            //rb.AddForce(1, -gravity, gravity);
         }
 
         if (grounded == true)
@@ -148,11 +146,11 @@ public class JetController : MonoBehaviour
         }
         if(col.gameObject.layer == 12 & grounded == false)
         {
+            rb.isKinematic = false;
             if (damageTime == 5)
             {
                 Damage(damage);
             }
-            rb.isKinematic = false;           
         }        
         
         
@@ -205,15 +203,15 @@ public class JetController : MonoBehaviour
             shield.SetActive(true);
         }
 
-        if (col.gameObject.layer == 11)
+        if (col.gameObject.layer == 13)
         {
             grounded = false;
         }
 
         if (col.gameObject.tag == "Respawn")
-            {
-                spawnPoint = col.gameObject;
-            }
+        {
+            spawnPoint = col.gameObject;
+        }
         if (col.gameObject.tag == "Finish")
         {
             finishScreen.SetActive(true);
@@ -250,7 +248,7 @@ public class JetController : MonoBehaviour
         if (isRace.activeSelf)
         {
             jetPrefab.transform.position = spawnPoint.transform.position;
-            transform.rotation = Quaternion.identity;
+            transform.rotation = spawnPoint.transform.rotation;
             rb.isKinematic = true;
             hp += 70;
             healthSlider.value = 70;

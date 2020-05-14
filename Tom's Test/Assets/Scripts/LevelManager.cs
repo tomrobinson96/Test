@@ -59,7 +59,14 @@ public class LevelManager : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
-
+    public void RelaodScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+    public void NextRace()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
     public void PauseMenuLoad()
     {
         pauseMenu.SetActive(true);

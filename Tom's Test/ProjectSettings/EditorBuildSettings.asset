@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: 
     guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/Race.unity
+    path: Assets/Scenes/RaceLevel1.unity
     guid: 60c9432bf98d8c045b025c3b9aded136
+  - enabled: 1
+    path: Assets/Scenes/RaceLevel2.unity
+    guid: a306b4954d292c548946896f12771ddb
   m_configObjects: {}
