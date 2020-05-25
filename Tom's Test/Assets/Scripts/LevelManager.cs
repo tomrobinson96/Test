@@ -34,38 +34,38 @@ public class LevelManager : MonoBehaviour
                 if (!isRace.activeSelf)
                 {
                     Time.timeScale = 0f;
-                    LoadEndless(1);
+                    RelaodScene();
                     Time.timeScale = 1f;
                 }
                 else
                 {
                     Time.timeScale = 0f;
-                    LoadRace(1);
+                    RelaodScene();
                     Time.timeScale = 1f;
                 }
             }
         }
     }
 
-    public void LoadEndless(int sceneNumber)
-    {
-        SceneManager.LoadScene(1);
-    }
-    public void LoadRace(int sceneNumber)
-    {
-        SceneManager.LoadScene(2);
-    }
     public void LoadMainMenu(int sceneNumber)
     {
         SceneManager.LoadScene(0);
+    }
+    public void LoadMainMenuDark(int sceneNumber)
+    {
+        SceneManager.LoadScene(4);
     }
     public void RelaodScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
-    public void NextRace()
+    public void NextLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+    public void Race()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
     }
     public void PauseMenuLoad()
     {

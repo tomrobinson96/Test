@@ -24,14 +24,19 @@ public class JetController : MonoBehaviour
     bool grounded = true;
 
     float damageTime = 5;
+    float lightshotTime = 5;
 
     public Rigidbody projectile;
-    float bulletSpeed = 160;
+    float bulletSpeed = 300;
     public float bulletsLeft;
     public Text bulletText;
 
+    public Rigidbody lightPro;
+    bool lightShot;
+
     bool shieldActive;
 
+    public GameObject lightMode;
     public GameObject shield;
     public GameObject spawnPoint;
     public GameObject jetPrefab;
@@ -41,6 +46,8 @@ public class JetController : MonoBehaviour
     public BoxCollider leftCollider;
     public BoxCollider rightCollider;
     public BoxCollider topCollider;
+
+    public GlobalTimer globalTimer;
 
     void Start()
     {
@@ -87,10 +94,24 @@ public class JetController : MonoBehaviour
             transform.Rotate(-Vector3.forward * turnSpeed * horizontalInput * Time.deltaTime);
         }
         
-        if (Input.GetKeyDown(KeyCode.Space) & bulletsLeft > 0)
+        if (Input.GetKeyDown(KeyCode.Space) & bulletsLeft > 0 & lightMode.activeSelf)
         {
             Shoot();
             bulletsLeft -= 1;
+        }
+        if (Input.GetKeyDown(KeyCode.Space) & !lightMode.activeSelf & lightshotTime == 5)
+        {
+            ShootLight();
+        }
+
+        if(lightShot)
+        {
+            lightshotTime -= Time.deltaTime;
+        }
+        if(lightshotTime <= 0 )
+        {
+            lightShot = false;
+            lightshotTime = 5;
         }
 
         string bulletstring = string.Format("{0}", bulletsLeft);
@@ -214,6 +235,7 @@ public class JetController : MonoBehaviour
         }
         if (col.gameObject.tag == "Finish")
         {
+            globalTimer.SetRecord();
             finishScreen.SetActive(true);
             Time.timeScale = 0f;
         }
@@ -224,8 +246,6 @@ public class JetController : MonoBehaviour
         damaged = true;
         if (shieldActive == false)
         {
-            //damaged = true;
-
             hp -= damageCount;
 
             healthSlider.value = hp;
@@ -264,9 +284,18 @@ public class JetController : MonoBehaviour
     //Shooting method
     void Shoot()
     {
-        {
+        {            
             Rigidbody instantiatedProjectile = Instantiate(projectile, transform.position, Quaternion.identity) as Rigidbody;
             instantiatedProjectile.velocity = transform.TransformDirection(new Vector3(0, 0, bulletSpeed));
+        }
+
+    }
+    void ShootLight()
+    {
+        {
+            lightShot = true;
+            Rigidbody instantiatedLightProjectile = Instantiate(lightPro, transform.position, Quaternion.identity) as Rigidbody;
+            instantiatedLightProjectile.velocity = transform.TransformDirection(new Vector3(0, 0, bulletSpeed));
         }
 
     }
