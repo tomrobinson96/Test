@@ -26,5 +26,10 @@ public class BulletBehaviour : MonoBehaviour
         {
             Physics.IgnoreCollision(col.collider, GetComponent<Collider>());
         }
+        if (col.gameObject.tag == "Jet")
+        {
+            print("Ignore");
+            Physics.IgnoreCollision(col.collider, GetComponent<Collider>());
+        }
     }
 }
