@@ -73,13 +73,13 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12114}
     - Class: 114
-      Script: {instanceID: 12504}
+      Script: {instanceID: 12502}
     - Class: 114
-      Script: {instanceID: 12572}
+      Script: {instanceID: 12570}
     - Class: 114
-      Script: {instanceID: 12590}
+      Script: {instanceID: 12588}
     - Class: 114
-      Script: {instanceID: 12598}
+      Script: {instanceID: 12596}
     - Class: 114
       Script: {instanceID: 12946}
     - Class: 114
@@ -140,13 +140,13 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12114}
     - Class: 114
-      Script: {instanceID: 12504}
+      Script: {instanceID: 12502}
     - Class: 114
-      Script: {instanceID: 12598}
+      Script: {instanceID: 12596}
+    - Class: 114
+      Script: {instanceID: 12944}
     - Class: 114
       Script: {instanceID: 12946}
-    - Class: 114
-      Script: {instanceID: 156536}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -213,13 +213,13 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12114}
     - Class: 114
-      Script: {instanceID: 12504}
+      Script: {instanceID: 12502}
     - Class: 114
-      Script: {instanceID: 12572}
+      Script: {instanceID: 12570}
     - Class: 114
-      Script: {instanceID: 12590}
+      Script: {instanceID: 12588}
     - Class: 114
-      Script: {instanceID: 12598}
+      Script: {instanceID: 12596}
     - Class: 114
       Script: {instanceID: 12946}
     - Class: 114
@@ -294,13 +294,13 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12114}
     - Class: 114
-      Script: {instanceID: 12504}
+      Script: {instanceID: 12502}
     - Class: 114
-      Script: {instanceID: 12572}
+      Script: {instanceID: 12570}
     - Class: 114
-      Script: {instanceID: 12590}
+      Script: {instanceID: 12588}
     - Class: 114
-      Script: {instanceID: 12598}
+      Script: {instanceID: 12596}
     - Class: 114
       Script: {instanceID: 12946}
     - Class: 114
@@ -381,13 +381,13 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12114}
     - Class: 114
-      Script: {instanceID: 12504}
+      Script: {instanceID: 12502}
     - Class: 114
-      Script: {instanceID: 12572}
+      Script: {instanceID: 12570}
     - Class: 114
-      Script: {instanceID: 12590}
+      Script: {instanceID: 12588}
     - Class: 114
-      Script: {instanceID: 12598}
+      Script: {instanceID: 12596}
     - Class: 114
       Script: {instanceID: 12946}
     - Class: 114
@@ -462,13 +462,13 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12114}
     - Class: 114
-      Script: {instanceID: 12504}
+      Script: {instanceID: 12502}
     - Class: 114
-      Script: {instanceID: 12572}
+      Script: {instanceID: 12570}
     - Class: 114
-      Script: {instanceID: 12590}
+      Script: {instanceID: 12588}
     - Class: 114
-      Script: {instanceID: 12598}
+      Script: {instanceID: 12596}
     - Class: 114
       Script: {instanceID: 12946}
     - Class: 114
@@ -502,11 +502,21 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 21
       Script: {instanceID: 0}
+    - Class: 23
+      Script: {instanceID: 0}
     - Class: 28
+      Script: {instanceID: 0}
+    - Class: 33
+      Script: {instanceID: 0}
+    - Class: 43
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
     - Class: 81
+      Script: {instanceID: 0}
+    - Class: 90
+      Script: {instanceID: 0}
+    - Class: 95
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
@@ -523,9 +533,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12114}
     - Class: 114
-      Script: {instanceID: 12504}
+      Script: {instanceID: 12502}
     - Class: 114
-      Script: {instanceID: 12598}
+      Script: {instanceID: 12596}
     - Class: 114
       Script: {instanceID: 12946}
     - Class: 115
@@ -961,6 +971,12 @@ ScriptsOnlyBuild:
     className: Dropdown
   - hash:
       serializedVersion: 2
+      Hash: c01ab310dc1980c2faa20bae5f3be99c
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: LightHandler
+  - hash:
+      serializedVersion: 2
       Hash: 748dd2a2a28da4e618912da5ac45684b
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
@@ -995,12 +1011,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
-  - hash:
-      serializedVersion: 2
-      Hash: c01ab310dc1980c2faa20bae5f3be99c
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: LightHandler
   platform: 5
   scenePathNames:
   - Assets/Scenes/TopMenu 1.unity
@@ -1010,4 +1020,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/DarkModeTop.unity
   - Assets/Scenes/DarkEndless.unity
   - Assets/Scenes/DarkRaceLevel1.unity
-  playerPath: C:/Users/Owner/Documents/Test/Builds/Version 3.0/Tom's Test.exe
+  playerPath: C:/Users/Owner/Documents/Test/Builds/Version 3.1/Tom's Test.exe

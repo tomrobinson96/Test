@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 4bc0bac0be2b96f49b8d0ef9a15a6020, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 9dcf355b6b909f14d92f359994b34df7, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -2717,8 +2717,8 @@ MonoBehaviour:
   isRace: {fileID: 945226299}
   highScore: {fileID: 297914244}
   highScoreFinal: {fileID: 1221209728}
-  highScore1: {fileID: 0}
-  highScore1Final: {fileID: 0}
+  highScore1: {fileID: 297914244}
+  highScore1Final: {fileID: 1221209728}
 --- !u!114 &532545735
 MonoBehaviour:
   m_ObjectHideFlags: 0

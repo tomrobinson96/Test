@@ -21,7 +21,7 @@ public class GlobalTimer : MonoBehaviour
 
     public JetController bS;
     public GameObject isRace;
-    bool race1;bool race2;
+    bool race1;bool race2; bool dEndless1; bool dRace1;
 
     public Text highScore;
     public Text highScoreFinal;
@@ -56,6 +56,16 @@ public class GlobalTimer : MonoBehaviour
                 highScore1.text = PlayerPrefs.GetFloat("HighscoreR2", 99999).ToString();
                 highScore1Final.text = PlayerPrefs.GetFloat("HighscoreR2", 99999).ToString();
                 race2 = true;
+                break;
+            case 5:
+                highScore1.text = PlayerPrefs.GetFloat("HighscoreDE", 99999).ToString();
+                highScore1Final.text = PlayerPrefs.GetFloat("HighscoreDE", 99999).ToString();
+                dEndless1 = true;
+                break;
+            case 6:
+                highScore1.text = PlayerPrefs.GetFloat("HighscoreDR1", 99999).ToString();
+                highScore1Final.text = PlayerPrefs.GetFloat("HighscoreDR1", 99999).ToString();
+                dRace1 = true;
                 break;
         }
         
@@ -102,6 +112,15 @@ public class GlobalTimer : MonoBehaviour
                 highScoreFinal.text = met.ToString();
             }
         }
+        if (dEndless1 == true)
+        {
+            if (met > PlayerPrefs.GetInt("HighscoreDE", 0))
+            {
+                PlayerPrefs.SetInt("HighscoreDE", met);
+                highScore.text = met.ToString();
+                highScoreFinal.text = met.ToString();
+            }
+        }
 
         if (race1 == true)
         {
@@ -115,6 +134,13 @@ public class GlobalTimer : MonoBehaviour
             if (gameTimer < PlayerPrefs.GetFloat("HighscoreR2", 99999))
             {
                 highScore1.text = PlayerPrefs.GetFloat("HighscoreR2", 99999).ToString();
+            }
+        }
+        if (dRace1 == true)
+        {
+            if (gameTimer < PlayerPrefs.GetFloat("HighscoreDR1", 99999))
+            {
+                highScore1.text = PlayerPrefs.GetFloat("HighscoreDR1", 99999).ToString();
             }
         }
     }
@@ -137,6 +163,15 @@ public class GlobalTimer : MonoBehaviour
                 PlayerPrefs.SetFloat("HighscoreR2", gameTimer);
                 highScore1Final.text = gameTimer.ToString();
                 print("set 2");
+            }
+        }
+        if (dRace1 == true)
+        {
+            if (gameTimer < PlayerPrefs.GetFloat("HighscoreDR1", 99999))
+            {
+                PlayerPrefs.SetFloat("HighscoreDR1", gameTimer);
+                highScore1Final.text = gameTimer.ToString();
+                print("set 3");
             }
         }
     }
