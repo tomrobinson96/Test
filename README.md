@@ -11,7 +11,7 @@ Currently: Finished creating components, ironing out bugs
   4. Load the Tom's Test '.exe' application
   5. Play
 
-# How to play the game
+## How to play the game
   
   To accelerate: Click the left button on your mouse!
 
@@ -21,7 +21,7 @@ Currently: Finished creating components, ironing out bugs
 
   To change pitch: Use the up and down buttons! (or ‘W’ and ‘S’) 
   
-#~ Objectives
+### Objectives
   
   When playing 'endless' the goal is to fly as far you
   can before your engine runs out of fuel!
