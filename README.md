@@ -3,7 +3,7 @@
 WIP 
 Currently: Finished creating components, ironing out bugs
 
-# To play either game mode
+# How to load the game
 
   1. Download this repository
   2. Open 'Builds'
