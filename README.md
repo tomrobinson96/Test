@@ -1,7 +1,7 @@
 # Airplane Racing Game
 
 WIP 
-Currently: Finishing the 'Endless' gamemode 
+Currently: Finished creating components, ironing out bugs
 
 # To play either game mode
 
