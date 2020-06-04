@@ -51,6 +51,14 @@ public class LevelManager : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
+    public void LoadInstructions(int sceneNumber)
+    {
+        SceneManager.LoadScene(8);
+    }
+    public void LoadPractice(int sceneNumber)
+    {
+        SceneManager.LoadScene(9);
+    }
     public void LoadMainMenuDark(int sceneNumber)
     {
         SceneManager.LoadScene(4);

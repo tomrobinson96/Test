@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class JetController : MonoBehaviour
 {
-    float speed = 180f;
+    float speed = 250f;
     private float turnSpeed = 70;
     private float horizontalInput;
     private float verticalInput;
@@ -25,6 +25,7 @@ public class JetController : MonoBehaviour
 
     float damageTime = 5;
     float lightshotTime = 5;
+    float countdownTime = 3;
 
     public Rigidbody projectile;
     float bulletSpeed = 300;
@@ -42,15 +43,15 @@ public class JetController : MonoBehaviour
     public GameObject jetPrefab;
     public GameObject finishScreen;
     public GameObject isRace;
-    public BoxCollider buttCollider;
-    public BoxCollider leftCollider;
-    public BoxCollider rightCollider;
-    public BoxCollider topCollider;
+    public GameObject door1;
+    public GameObject door2;
+
 
     public GlobalTimer globalTimer;
 
     void Start()
     {
+
         Time.timeScale = 1f;
         rb = GetComponent<Rigidbody>();
         healthSlider.value = hp;
@@ -59,19 +60,23 @@ public class JetController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        countdownTime -= Time.deltaTime;
+
         verticalInput = Input.GetAxis("Vertical");
         horizontalInput = Input.GetAxis("Horizontal");
-
-        if (Input.GetMouseButton(0))
-        {  
-            rb.isKinematic = true;
-            transform.Translate(Vector3.forward * Time.deltaTime * speed);
-        }
-        else
+        if (countdownTime < 0)
         {
-            rb.isKinematic = false;
-            rb.AddForce(1, -gravity, gravity);
+            if (Input.GetMouseButton(0))
+            {
+                rb.isKinematic = true;
+                transform.Translate(Vector3.forward * Time.deltaTime * speed);
+            }
+
+            else
+            {
+                rb.isKinematic = false;
+                rb.AddForce(1, -gravity, gravity);
+            }
         }
 
         if(transform.position.y >= 360)
@@ -121,11 +126,12 @@ public class JetController : MonoBehaviour
         {
             healthSlider.value = hp;
             boostingTime -= Time.deltaTime;
-            speed = 250;
+            speed = 350f;
             if(boostingTime < 0)
             {
                 boosting = false;
-                speed = 180;
+                boostingTime = 3;
+                speed = 250f;
             }
         }
         else
@@ -237,7 +243,16 @@ public class JetController : MonoBehaviour
         {
             globalTimer.SetRecord();
             finishScreen.SetActive(true);
+            globalTimer.SetMedal();
             Time.timeScale = 0f;
+        }
+        if (col.gameObject.tag == "Key 1")
+        {
+            door1.SetActive(false);
+        }
+        if (col.gameObject.tag == "Key 2")
+        {
+            door2.SetActive(false);
         }
     }
 
