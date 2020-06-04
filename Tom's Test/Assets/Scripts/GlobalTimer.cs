@@ -11,7 +11,7 @@ public class GlobalTimer : MonoBehaviour
     public Text timer;
     public Text pausedTimer;
     public Text finishedTime;    
-    float gameTimer = 0f;
+    float gameTimer = -3f;
 
     public string timerString;
 
@@ -21,12 +21,14 @@ public class GlobalTimer : MonoBehaviour
 
     public JetController bS;
     public GameObject isRace;
-    bool race1;bool race2; bool dEndless1; bool dRace1;
+    bool race1;bool race2; bool dEndless1; bool dRace1; bool dRace2;
 
     public Text highScore;
     public Text highScoreFinal;
     public Text highScore1;    
-    public Text highScore1Final;    
+    public Text highScore1Final;
+
+    public GameObject bronze; public GameObject silver; public GameObject gold;
 
 
     void Start()
@@ -58,14 +60,19 @@ public class GlobalTimer : MonoBehaviour
                 race2 = true;
                 break;
             case 5:
-                highScore1.text = PlayerPrefs.GetFloat("HighscoreDE", 99999).ToString();
-                highScore1Final.text = PlayerPrefs.GetFloat("HighscoreDE", 99999).ToString();
+                highScore1.text = PlayerPrefs.GetInt("HighscoreDE", 0).ToString();
+                highScore1Final.text = PlayerPrefs.GetInt("HighscoreDE", 0).ToString();
                 dEndless1 = true;
                 break;
             case 6:
                 highScore1.text = PlayerPrefs.GetFloat("HighscoreDR1", 99999).ToString();
                 highScore1Final.text = PlayerPrefs.GetFloat("HighscoreDR1", 99999).ToString();
                 dRace1 = true;
+                break;
+            case 7:
+                highScore1.text = PlayerPrefs.GetFloat("HighscoreDR2", 99999).ToString();
+                highScore1Final.text = PlayerPrefs.GetFloat("HighscoreDR2", 99999).ToString();
+                dRace2 = true;
                 break;
         }
         
@@ -143,6 +150,13 @@ public class GlobalTimer : MonoBehaviour
                 highScore1.text = PlayerPrefs.GetFloat("HighscoreDR1", 99999).ToString();
             }
         }
+        if (dRace2 == true)
+        {
+            if (gameTimer < PlayerPrefs.GetFloat("HighscoreDR2", 99999))
+            {
+                highScore1.text = PlayerPrefs.GetFloat("HighscoreDR2", 99999).ToString();
+            }
+        }
     }
 
     public void SetRecord()
@@ -172,6 +186,79 @@ public class GlobalTimer : MonoBehaviour
                 PlayerPrefs.SetFloat("HighscoreDR1", gameTimer);
                 highScore1Final.text = gameTimer.ToString();
                 print("set 3");
+            }
+        }
+        if (dRace2 == true)
+        {
+            if (gameTimer < PlayerPrefs.GetFloat("HighscoreDR2", 99999))
+            {
+                PlayerPrefs.SetFloat("HighscoreDR2", gameTimer);
+                highScore1Final.text = gameTimer.ToString();
+                print("set 3");
+            }
+        }
+    }
+    public void SetMedal()
+    {
+        if(race1 == true)
+        {
+            if (gameTimer > 83)
+            {
+                bronze.SetActive(true);
+            }
+            if(72<gameTimer && gameTimer<83)
+            {
+                silver.SetActive(true);
+            }
+            if(gameTimer < 72 )
+            {
+                gold.SetActive(true);
+            }
+        }
+        if (dRace1 == true)
+        {
+            if (gameTimer > 83)
+            {
+                bronze.SetActive(true);
+            }
+            if (72 < gameTimer && gameTimer < 83)
+            {
+                silver.SetActive(true);
+            }
+            if (gameTimer < 72)
+            {
+                gold.SetActive(true);
+            }
+        }
+
+        if (race2 == true)
+        {
+            if (gameTimer > 73)
+            {
+                bronze.SetActive(true);
+            }
+            if (59 < gameTimer && gameTimer < 73)
+            {
+                silver.SetActive(true);
+            }
+            if (gameTimer < 59)
+            {
+                gold.SetActive(true);
+            }
+        }
+        if (dRace2 == true)
+        {
+            if (gameTimer > 73)
+            {
+                bronze.SetActive(true);
+            }
+            if (59 < gameTimer && gameTimer < 73)
+            {
+                silver.SetActive(true);
+            }
+            if (gameTimer < 59)
+            {
+                gold.SetActive(true);
             }
         }
     }

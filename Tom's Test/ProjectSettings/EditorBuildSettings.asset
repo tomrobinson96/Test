@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/TopMenu 1.unity
+    path: Assets/Scenes/TopMenu.unity
     guid: 307f2d2674b0222478a51525b2e3334c
   - enabled: 1
     path: Assets/Scenes/Endless.unity
@@ -26,4 +26,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DarkRaceLevel1.unity
     guid: 384fceb9305a6d448848f2c927f3bf5c
+  - enabled: 1
+    path: Assets/Scenes/DarkRaceLevel2.unity
+    guid: b44981af4026c6e4d921967fcae2a1e2
+  - enabled: 1
+    path: Assets/Scenes/TopInstructions.unity
+    guid: 291cb82adb4b8cd4dbe0f7dbc57cc71b
+  - enabled: 1
+    path: Assets/Scenes/PracticeLevel.unity
+    guid: 20b26b49a48d6614fbe31d5611c9e373
   m_configObjects: {}

@@ -9,6 +9,8 @@ TagManager:
   - BulletBoost
   - ShieldBoost
   - Shield
+  - Key 1
+  - Key 2
   layers:
   - Default
   - TransparentFX

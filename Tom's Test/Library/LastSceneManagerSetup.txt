@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/RaceLevel2.unity
+- path: Assets/Scenes/TopMenu.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
